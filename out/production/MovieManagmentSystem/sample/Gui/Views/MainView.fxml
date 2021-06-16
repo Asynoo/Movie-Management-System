@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Gui.Controllers.MainController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane id="pane" maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Css/Main.css">
+         <children>
+            <Button id="pane" layoutX="131.0" layoutY="4.0" mnemonicParsing="false" onAction="#openWindow" prefHeight="25.0" prefWidth="102.0" stylesheets="@../Css/ListView.css" text="Library" textFill="WHITE" />
+            <ListView id="pane" fx:id="listCategory" layoutX="22.0" layoutY="87.0" onMouseClicked="#categorySearch" prefHeight="607.0" prefWidth="181.0" stylesheets="@../Css/listStyle.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ListView>
+            <Label layoutX="70.0" layoutY="54.0" prefHeight="26.0" prefWidth="85.0" text="Categories" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font></Label>
+            <Button id="pane" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#addPath" prefHeight="25.0" prefWidth="102.0" styleClass="red" stylesheets="@../Css/ListView.css" text="Movie Settings" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <TextField fx:id="typeField" layoutX="1130.0" layoutY="4.0" prefHeight="25.0" prefWidth="135.0" promptText="search...." stylesheets="@../Css/Main.css" />
+            <Label layoutX="483.0" layoutY="54.0" prefHeight="26.0" prefWidth="58.0" text="Movies" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ListView id="pane" fx:id="listMovie" layoutX="345.0" layoutY="87.0" onKeyPressed="#playMovie" onMouseClicked="#getSelectedMovie" prefHeight="607.0" prefWidth="330.0" stylesheets="@../Css/listStyle.css" />
+            <Pane fx:id="infoBox" layoutX="772.0" layoutY="298.0" prefHeight="38.0" prefWidth="447.0">
+               <children>
+                  <Label fx:id="titleView" layoutY="5.0" prefHeight="26.0" prefWidth="447.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="ratingBox" layoutY="12.0" prefHeight="45.0" prefWidth="447.0" />
+               </children></Pane>
+            <Label layoutX="966.0" layoutY="378.0" prefHeight="26.0" prefWidth="58.0" text="Rating" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="842.0" layoutY="5.0" prefHeight="26.0" prefWidth="49.0" text="Rating" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button id="pane" fx:id="ratingSearchButton" layoutX="894.0" layoutY="4.0" mnemonicParsing="false" onAction="#shiftRatingSearch" prefHeight="25.0" prefWidth="79.0" stylesheets="@../Css/ListView.css" text="from:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Slider fx:id="ratingSearchSlider" blockIncrement="1.0" layoutX="989.0" layoutY="1.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefHeight="38.0" prefWidth="135.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+            <Button id="pane" fx:id="removeMovie" layoutX="639.0" layoutY="51.0" mnemonicParsing="false" onAction="#removeMovie" prefHeight="25.0" prefWidth="16.0" stylesheets="@../Css/ListView.css">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/clipart1120803.png" />
+                     </image></ImageView>
+               </graphic></Button>
+            <Label fx:id="ratingSearchRangeLbl" alignment="CENTER" layoutX="989.0" layoutY="6.0" prefHeight="26.0" prefWidth="135.0" text="Rating" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="639.0" layoutY="5.0" prefHeight="26.0" prefWidth="58.0" text="Sort by:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="sortChoiceBox" layoutX="687.0" layoutY="4.0" prefHeight="25.0" prefWidth="67.0" />
+            <Button id="pane" fx:id="sortButton" layoutX="770.0" layoutY="4.0" mnemonicParsing="false" onAction="#sortMovies" prefHeight="27.0" prefWidth="58.0" stylesheets="@../Css/ListView.css" text="Sort" textFill="WHITE" />
+            <Button id="pane" fx:id="removeCategory" layoutX="167.0" layoutY="51.0" mnemonicParsing="false" onAction="#removeCategory" prefHeight="25.0" prefWidth="16.0" stylesheets="@../Css/ListView.css">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/clipart1120803.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button id="pane" layoutX="248.0" layoutY="4.0" mnemonicParsing="false" onAction="#refresh" stylesheets="@../Css/ListView.css" text="Refresh" textFill="WHITE" />
+            <Rating fx:id="ratingMovie" layoutX="908.0" layoutY="402.0" onMouseClicked="#setRating" partialRating="true" prefHeight="38.0" prefWidth="176.0" rating="1.0" updateOnHover="true">
+               <effect>
+                  <Lighting diffuseConstant="1.65" specularConstant="1.06" specularExponent="40.0" surfaceScale="2.43">
+                     <bumpInput>
+                        <PerspectiveTransform />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ae00ff" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Rating>
+            <Label layoutX="927.0" layoutY="253.0" prefHeight="26.0" prefWidth="125.0" text="Selected Movie" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <InnerShadow color="#740046" />
+         </effect>
+      </AnchorPane>
+   </children>
+</GridPane>
